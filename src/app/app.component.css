@@ -1,5 +1,7 @@
 table {
-  width: 50%;
+  width: 100%;
   text-align: center;
   border: solid gray;
+  padding: 5px;
+  margin: 10px;
 }

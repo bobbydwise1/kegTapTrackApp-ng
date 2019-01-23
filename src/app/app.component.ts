@@ -66,18 +66,24 @@ export class AppComponent {
   }
 
   createKeg(){
-    this.kegList.push(new Keg("", "", 0, 0));
+    this.selectedKeg = new Keg("", "", 0, 0);
   }
 
-  finishedEditing(){
-  this.selectedKeg = null;
-  this.pour = null;
+  finishedEditing(this.selectedKeg){
+  this.kegList.push(new Keg(this.selectedKeg.beerBrand, this.selectedKeg.beerName, this.selectedKeg.price, this.selectedKeg.alcByVolume));
+  this.resetTriggers();
+
   }
 
   pourOneOutForTheHomies(clickedKeg){
     this.pour = "pouring";
     this.selectedKeg = clickedKeg;
     this.selectedKeg.pourABeer();
+    this.resetTriggers();
   }
 
+  resetTriggers(){
+    this.selectedKeg = null;
+    this.pour = null;
+  }
 }

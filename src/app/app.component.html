@@ -5,7 +5,8 @@
   </h1>
   <img width="300" alt="Angular Logo" src="https://2fdltvvn8wp2rn64ywgk8o17-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/half-barrel-keg.jpg">
 </div>
-
+<div class="container" style="text-align:center">
+  <div style="display:inline-block">
   <h3>Kegs on tap</h3>
   <table class="table-bordered">
     <tr>
@@ -37,7 +38,7 @@
 
   <button (click) = "createKeg()">Add a new Keg</button>
 
-  <div *ngIf = "selectedKeg && pour == null">
+  <div *ngIf = "selectedKeg && this.pour == null">
     <h3>{{selectedKeg.beerBrand}}</h3>
     <p>Pours Remaining: {{selectedKeg.poursRemaining}}</p>
     <h3>Edit Keg Info:</h3>
@@ -53,6 +54,8 @@
       <button (click) = "finishedEditing()">Done</button>
     </div>
     <div *ngIf = 'newKeg && newKeg != null'>
-      <button (click) = "finishedEditing()">Done</button>
+      <button (click) = "finishedEditing(selectedKeg)">Done</button>
     </div>
   </div>
+</div>
+</div>
