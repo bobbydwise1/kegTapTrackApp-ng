@@ -22,7 +22,7 @@
     <tr *ngFor="let keg of kegList"  [ngStyle]="{'font-weight' : setRowBoldStyle(keg) }">
       <td>{{ keg.beerBrand }} </td>
       <td>{{ keg.beerName }}</td>
-      <td [style.backgroundColor]="this.setCellBackgroundStyle(keg)"><div style = "padding: 10px">${{ keg.pintPrice }}</div></td>
+      <td [style.backgroundColor]="this.setCellBackgroundStyle(keg)"><div style = "padding: 10px">${{ keg.pintPriceString }}</div></td>
       <td>{{ keg.alcByVolume }}%</td>
       <td>{{ keg.poursRemaining}}</td>
       <td>
